@@ -1,7 +1,7 @@
 {
   "name": "razilobind",
   "version": "1.0.2",
-  "description": "Conatiner for ES6 JS/HTML binding library for creating cynamic web applications through HTML attribtue binding. Pulls in all required parts and configures as RaziloBind",
+  "description": "ES6 JS/HTML binding library for creating dynamic web applications through HTML attribute binding. Pulls in all required parts and configures as RaziloBind",
   "author": "Paul Smith (smiffy6969)",
   "homepage": "http://bind.razilo.net",
   "dependencies": {

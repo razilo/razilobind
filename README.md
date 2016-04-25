@@ -1,14 +1,30 @@
 # raziloBind
 
-## Container ES6 JS/HTML Binding Library
+## ES6 JS/HTML Binding Library
 
-Conatiner for ES6 JS/HTML binding library for creating cynamic web applications through HTML attribtue binding. Pulls in all required parts and configures as RaziloBind
+ES6 JS/HTML binding library for creating dynamic web applications through HTML attribute binding. Pulls in all required parts and configures as RaziloBind.
 
-A data binding library to bind ES6 JS to HTML views thorugh HTML attributes, offering live changes to update modules and vice versa.
+raziloBind is a simple lightweight library written in ES6, it consists of 4 parts, raziloCore (the main part) and 3 libraries for dealing with binders, resolvers and alterers. This package is the parent package that pulls in all parts of the system, configures the defaults and bundles it all up as a single import.
 
-This is the library container, which pulls in razilobind-core, razilobind-alterer, razilobind-binder, razilobind-resolver then extends core, configuring the library for standard use.
+Using raziloBind is as simple as...
 
-If you wish to install raziloBind without the container, you can import the 4 parts of raziloBind, and add them directly to your project, choosing which parts of the system to use (please see index.js)
+```javascript
+import RaziloBind from 'razilobind'
+
+var model = {foo: 'foo', bar: 'bar'};
+
+var rb = new RaziloBind();
+rb.bind('#test', model);
+```
+
+The above will import the ES6 module, set a new JS object as a model, create an instance of the class and bind the element id 'test' to the model. All changes to your model will now be reflected inside your bound element by using html attributes. In addition to this, changes to HTML values in form controls will be reflected inside your model.
+
+raziloBind offers a mix of two and single way binding on various elements, and also allows model methods (functions) to be re-evaluated if a two way bound model property (variable) used as a method variable is changed.
+
+Finally, if you wish to expand on this, you may build your own collection of binders, resolvers and alterers, injecting them into the library, or better still, fork parts of the library and create your own parent importer that pulls in the parts of the system you require. Only want a few binders and resolvers, just extend core (as per razilobind) and pull in what you want, raziloBind is as big as you want it to be.
+
+
+WIP!
 
 
 ```javascript
