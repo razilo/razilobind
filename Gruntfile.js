@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 			   ]
             },
             files: {
-               "./dist/razilovm.js": ["./index.js"]
+               "./dist/razilobind.js": ["./index.js"]
             }
          }
       },
