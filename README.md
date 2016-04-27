@@ -6,7 +6,14 @@
 
 ES6 JS/HTML binding library for creating dynamic web applications through HTML attribute binding. Pulls in all required parts and configures as importable ES6 module 'RaziloBind'.
 
-raziloBind is a simple lightweight library written in ES6, it consists of 4 parts, raziloCore (the main part) and 3 libraries for dealing with binders, resolvers and alterers. This package is the parent package that pulls in all parts of the system, configures the default injectables and bundles everything up as a single import.
+raziloBind is a simple lightweight library collection written in ES6, it consists of 4 parts...
+
+* **[https://github.com/smiffy6969/razilobind-core](razilobind-core)** *(the main part)*, to traverse, detect and observe.
+* **[https://github.com/smiffy6969/razilobind-binder](razilobind-binder) [injectables]** *(the actual binders)*, binding object properties to elements to do various things.
+* **[https://github.com/smiffy6969/razilobind-resolver](razilobind-resolver) [injectables]** *(to parse attribute data)*, resolving attribute data to things like strings, numbers, objects, methods etc.
+* **[https://github.com/smiffy6969/razilobind-alterer](razilobind-alterer) [injectables]** *(to change things)*, altering resolved data to something else without affecting the model.
+
+This package **razilobind** extends core, and pulls in all parts of the system, configures the default injectables and bundles everything up as a single import.
 
 Using raziloBind is as simple as...
 
@@ -19,7 +26,7 @@ var rb = new RaziloBind();
 rb.bind('#test', model);
 ```
 
-... then build your distributable using babel and include the dsitrbutable into your html view. You can then access them via...
+...then build your distributable logic file using babel and include the distributable into your html view. You can then access them via...
 
 ```html
 <span bind-text="foo"></span>
@@ -32,29 +39,29 @@ The above will import the ES6 module, set a new JS object as a model, create an 
 
 raziloBind offers a mix of two and single way binding on various elements, and also allows model methods (functions) to be re-evaluated if a two way bound model property (variable) used as a method variable is changed.
 
-Finally, if you wish to expand on this, you may build your own collection of binders, resolvers and alterers, injecting them into the library, or better still, fork parts of the library and create your own parent importer that pulls in the parts of the system you require. Only want a few binders and resolvers, just extend core (as per razilobind) and pull in what you want, raziloBind is as big as you want it to be.
+Finally, if you wish to configure the library (maybe add a prefix) or expand on this, you may build your own collection of binders, resolvers and alterers, injecting them into the library, or better still, fork parts of the library and create your own parent importer that pulls in the parts of the system you require. Only want a few binders and resolvers, just extend core (as per razilobind) and pull in what you want, raziloBind is as big as you want it to be.
 
 
 ## Why ES6?
 
 
-Its the future of JS, is vanilla JS (which I like), is clean, is more modular, offers better organisation of code and using via imports is a breeze! So why would you not?
+It's the future of JS, is vanilla JS (which I like), is clean, is more modular, offers better organisation of code and using via imports is a breeze! So why would you not?
 
 
 ## Is There an ES5 Distributable?
 
 
-No, if you want one, I am sure it would be quite simple to build one from the source files, build a copy of razilobind using babel + grunt/gulp and you should be able to include it via a require() import. I do not suppor tthis though, as it kind of defeats the object of being an ES6 module.
+No, if you want one, I am sure it would be quite simple to build one from the source files, build a copy of razilobind using babel + grunt/gulp and you should be able to include it via a require() import. I do not suppor this though, as it kind of defeats the object of being an ES6 module collection.
 
 
 ## Why Another Binding Framework?
 
 
-This is not framework! It's a library. Frameworks force you to work in a specific fashion, do things in a specific way whilst giving you the tools to complete a job. They offer a blueprint, foundations and the means to do the job. Moving from one framework to another can be a pain and code is not always portable.
+This is not framework! It's a library. Frameworks force you to work in a specific fashion, do things in a specific way, force architecture whilst giving you the tools to complete a job. They offer a blueprint, foundations and the means to do the job. Moving from one framework to another can be a pain and code is not always portable, they tie you in! Frameworks are great tools, if you are happy to accept these caveats.
 
-A library on the other hand offers a means to do something, is more easily ported from or to and can be switched out for something similar. The benefits are many!
+Libraries on the other hand tend to be lighter, offer a means to do specific task/tasks, are more focussed, more easily ported, stay away from decisions you should be able to make yourself and should allow you to be more flexible. They can be switched out for something similar when needed, or extended, forked to add your own sugar. Less time or don't care about choice, use a framework, more time or like flexibility, use a library.
 
-Why another? because I have yet to find a nice ES6 library that is easily extendabled, hackable or makeyourownable, and because choise is good!
+Why another? because I have yet to find a nice ES6 library that is easily extendabled, hackable/makeyourownable, allows for fine grain choice of what you build in, and because choice is good is it not?
 
 
 ## Overview
@@ -62,20 +69,55 @@ Why another? because I have yet to find a nice ES6 library that is easily extend
 
 raziloBind is one thing and one thing alone, a binding library that offers attribute binding in HTML to JS object data (a model). It is written as 4 modules, whith this fifth module acting as a way to pull the 4 modules together by extending the core module, injecting in all default alterers, binders and resolvers (yes you can fork this module, and inject it what you need to lighten the load if you dont want all the default stuff).
 
-raziloBind works by having a core, the base part of the tool that gives a traverser (for looking through the dom), a detector (for loading and looking through alterers, binders and resolvers) and the observer (for watching changes on the model). This package injects several things into the core on load...
+raziloBind works by having a core, the base part of the tool that gives a traverser (for looking through the dom), a detector (for loading and looking through alterers, binders and resolvers) and the observer (for watching changes on the model). This package injects several things into the core on load (injectables)...
 
-* Binders - These bind resolvable data to an element attribute that will do a specific job, like output text, show/hide and element etc.
-* Resolvers - These are what turns your data inside your element attribute into things like strings, objects, model properties etc. They parse text into resolved data (and generate observers for data that is updateable).
-* Alterers - These change resolved data that is binded to an element attribute, you can chain them too.
+* **Binders** - These bind resolvable data to an element attribute that will do a specific job, like output text, show/hide and element etc.
+* **Resolvers** - These are what turns your data inside your element attribute into things like strings, objects, model properties etc. They parse text into resolved data (and generate observers for data that is updateable).
+* **Alterers** - These change resolved data that is binded to an element attribute, you can chain them too.
 
-Binding is not a new thing, angular, vue, backbone, rivets... there are many, big and small binding libraries out there, raziloBind tries to keep this simple and not force specific ways of working, we just offer 3 simple ways to build dynamic apps, by binding data to an element, allowing the bindable data to be resolved and watched and give a way to change the outcome of the resolved data that is bound.
+Binding is not a new thing, angular, vue, backbone, rivets... there are many, big and small binding frameworks and libraries out there, some offer more than just binding (frameworks like angular, vue), raziloBind tries to keep this simple and not force specific ways of working, we just offer a simple way to build dynamic web apps by binding, resolving and altering.
 
-Things wouldn't be complete without a way to customize, well at present you can prefix, or not, all your attributes, default is off, giving you the option to go clean or add a common prefix to all razilo attributes such as raz-bind-text="" or raz-alter-text="". You can also extend raziloBind in two ways, by forking this package, and creating a build or what you need, plus extras (mmmmmm clean), or the other way, by injecting custom alterers, binders and resolvers directly (not so clean but handy). In an ideal world, you would build core, alterers, binders and resolvers directly into your own project without this package ofr a real clean import.
+Things wouldn't be complete without a way to customize, well at present you can prefix, or not, all your attributes. Default is off, giving you the option to go clean or add a common prefix to all razilo attributes such as raz-bind-text="" or raz-alter-text="". You can also extend raziloBind in two ways, by forking this package, and creating a build or what you need, plus extras (mmmmmm clean), or the other way, by injecting custom alterers, binders and resolvers directly (not so clean but handy). In an ideal world, you would build core, alterers, binders and resolvers directly into your own project without this package ofr a real clean import.
 
-### Binders (bind-?="")
+No mustache binds I hear you scream! That is correct, there should be no need for them really, they offer more load on the traverser and can be worked out of the equation by using a dedicated bound element. When your code gets large, lots of mustaches can make things ugly to read, surely HTML tags are better in a HTML file than mustaches?
 
 
-[https://github.com/smiffy6969/razilobind-binder]smiffy6969/razilobind-binder
+### Configure
+
+
+Add in the prefix option to force a prefix on all razilobind attributes...
+
+
+```javascript
+import RaziloBind from 'razilobind'
+
+var model = {foo: 'foo', bar: 'bar'};
+
+var rb = new RaziloBind({prefix: 'raz'});
+rb.bind('#test', model);
+```
+
+Now prefixes should be available on all razilobind attributes...
+
+
+```html
+<span raz-bind-text="foo" raz-alter-text="trim"></span>
+```
+
+
+### Core
+
+
+[https://github.com/smiffy6969/razilobind-core](smiffy6969/razilobind-core)
+
+
+Handles all the finicky bits, like traversing the dom, observing changes, registering observers and detecting injectables to use. You should'nt really have to mess with this, but you can send in the prefix option if importing this directly (this package passes this on).
+
+
+### Binders (bind-???="")
+
+
+[https://github.com/smiffy6969/razilobind-binder](smiffy6969/razilobind-binder)
 
 Binds data inside the attribute to an element to perform a specific function. Each function offers a way to bring your HTML to life. For a full list of binders, please see the razilobind-binder module.
 
@@ -121,7 +163,7 @@ Find out more in the binders module.
 ### Resolvers (bind-text="???")
 
 
-[https://github.com/smiffy6969/razilobind-resolver]smiffy6969/razilobind-resolver
+[https://github.com/smiffy6969/razilobind-resolver](smiffy6969/razilobind-resolver)
 
 So you use a binder to perform a bind of data to an element, well the data that is bound could be many different types, so we have resolvers to work out what the data is, inside the attribute quotes.
 
@@ -164,7 +206,7 @@ Other thing sto note are using model properties as keys for model properties inc
 ### Alterers (alter-text="???")
 
 
-[https://github.com/smiffy6969/razilobind-alterer]smiffy6969/razilobind-alterer
+[https://github.com/smiffy6969/razilobind-alterer](smiffy6969/razilobind-alterer)
 
 Alterers change the bound resolved data (after processing) to change the value to something else, kinda handy if you want to format a date from a string/timestamp, or maybe add http:// to the front of a string. Alteres do not affect resolved data, they alter it, use this with the binder but do not make it permenant or affect the core resolved value.
 
@@ -247,9 +289,6 @@ module.exports = function (grunt) {
             	]
             },
             files: {
-            	// if the source file has an extension of es6 then
-            	// we change the name of the source file accordingly.
-            	// The result file's extension is always .js
             	"./dist/dist.js": ["./app.js"]
             }
          }
@@ -383,3 +422,9 @@ grunt watch
 
 grunt
 ```
+
+
+## What next?
+
+
+Not sure, more binders, more alterers, more options... let us know what you think!
