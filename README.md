@@ -8,10 +8,10 @@ ES6 JS/HTML binding library for creating dynamic web applications through HTML a
 
 raziloBind is a simple lightweight library collection written in ES6, it consists of 4 parts...
 
-* **[https://github.com/smiffy6969/razilobind-core](razilobind-core)** *(the main part)*, to traverse, detect and observe.
-* **[https://github.com/smiffy6969/razilobind-binder](razilobind-binder) [injectables]** *(the actual binders)*, binding object properties to elements to do various things.
-* **[https://github.com/smiffy6969/razilobind-resolver](razilobind-resolver) [injectables]** *(to parse attribute data)*, resolving attribute data to things like strings, numbers, objects, methods etc.
-* **[https://github.com/smiffy6969/razilobind-alterer](razilobind-alterer) [injectables]** *(to change things)*, altering resolved data to something else without affecting the model.
+* **[razilobind-core](https://github.com/smiffy6969/razilobind-core)** *(the main part)*, to traverse, detect and observe.
+* **[razilobind-binder](https://github.com/smiffy6969/razilobind-binder) [injectables]** *(the actual binders)*, binding object properties to elements to do various things.
+* **[razilobind-resolver](https://github.com/smiffy6969/razilobind-resolver) [injectables]** *(to parse attribute data)*, resolving attribute data to things like strings, numbers, objects, methods etc.
+* **[razilobind-alterer](https://github.com/smiffy6969/razilobind-alterer) [injectables]** *(to change things)*, altering resolved data to something else without affecting the model.
 
 This package **razilobind** extends core, and pulls in all parts of the system, configures the default injectables and bundles everything up as a single import.
 
@@ -108,7 +108,7 @@ Now prefixes should be available on all razilobind attributes...
 ### Core
 
 
-[https://github.com/smiffy6969/razilobind-core](smiffy6969/razilobind-core)
+[smiffy6969/razilobind-core](https://github.com/smiffy6969/razilobind-core)
 
 
 Handles all the finicky bits, like traversing the dom, observing changes, registering observers and detecting injectables to use. You should'nt really have to mess with this, but you can send in the prefix option if importing this directly (this package passes this on).
@@ -117,7 +117,7 @@ Handles all the finicky bits, like traversing the dom, observing changes, regist
 ### Binders (bind-???="")
 
 
-[https://github.com/smiffy6969/razilobind-binder](smiffy6969/razilobind-binder)
+[smiffy6969/razilobind-binder](https://github.com/smiffy6969/razilobind-binder)
 
 Binds data inside the attribute to an element to perform a specific function. Each function offers a way to bring your HTML to life. For a full list of binders, please see the razilobind-binder module.
 
@@ -163,7 +163,7 @@ Find out more in the binders module.
 ### Resolvers (bind-text="???")
 
 
-[https://github.com/smiffy6969/razilobind-resolver](smiffy6969/razilobind-resolver)
+[smiffy6969/razilobind-resolver](https://github.com/smiffy6969/razilobind-resolver)
 
 So you use a binder to perform a bind of data to an element, well the data that is bound could be many different types, so we have resolvers to work out what the data is, inside the attribute quotes.
 
@@ -206,7 +206,7 @@ Other thing sto note are using model properties as keys for model properties inc
 ### Alterers (alter-text="???")
 
 
-[https://github.com/smiffy6969/razilobind-alterer](smiffy6969/razilobind-alterer)
+[smiffy6969/razilobind-alterer](https://github.com/smiffy6969/razilobind-alterer)
 
 Alterers change the bound resolved data (after processing) to change the value to something else, kinda handy if you want to format a date from a string/timestamp, or maybe add http:// to the front of a string. Alteres do not affect resolved data, they alter it, use this with the binder but do not make it permenant or affect the core resolved value.
 
