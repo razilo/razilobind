@@ -48,6 +48,20 @@ Finally, if you wish to configure the library (maybe add a prefix) or expand on 
 It's the future of JS, is vanilla JS (which I like), is clean, is more modular, offers better organisation of code and using via imports is a breeze! So why would you not?
 
 
+## Whats Supported?
+
+
+Propert browsers are fully supported in their evergreen state, IE is supported down to IE9 through polyfills.
+
+
+## What are the Dependancies?
+
+
+We will aim to be dependancy free, of course this package depends on other parts of the razilobind collection, and there is also the compilation development dependancies like grunt/gulp, babel etc... Whilst we try to be dependancy free in the actual razilobind library, we do bundle some code, such as dateFormat https://github.com/felixge/node-dateformat by Steven Levithan <stevenlevithan.com>. We bundle this because it is not native ES6 and because it is small enough to put into the alterer class directly.
+
+The only real dependancy we have at present, and it is not so much a dependancy really, is the proxy polyfill. This is what we use to polfill Proxy() in browsers that do not yet support it. So Chrome and FF will not need it and will ignore it, IE will use it down to IE 9 so expect a little delay here. Proxy() is used to observe changes on the model, so you will need to add this to your HTML head section if you want support down to IE9, this will be pulled in automagically with npm install, feel free to use it anywhere in your project without worry. 
+
+
 ## Is There an ES5 Distributable?
 
 
