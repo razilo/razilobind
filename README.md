@@ -4,6 +4,9 @@
 ## ES6 JS/HTML Binding Library
 
 
+Find us at [bind.razilo.net](http://bind.railo.net)
+
+
 ES6 JS/HTML binding library for creating dynamic web applications through HTML attribute binding. Pulls in all required parts and configures as importable ES6 module 'RaziloBind'.
 
 raziloBind is a simple lightweight library collection written in ES6, it consists of 4 parts...
