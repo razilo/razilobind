@@ -10,7 +10,9 @@ import {
 	RaziloBindPrefixAlterer,
 	RaziloBindSuffixAlterer,
 	RaziloBindDateAlterer,
-	RaziloBindJoinAlterer
+	RaziloBindJoinAlterer,
+	RaziloBindEqualAlterer,
+	RaziloBindIdenticalAlterer
 } from 'razilobind-alterer'
 
 import {
@@ -57,7 +59,9 @@ export default class RaziloBind extends RaziloBindCore {
 			PrefixAlterer: RaziloBindPrefixAlterer,
 			SuffixAlterer: RaziloBindSuffixAlterer,
 			DateAlterer: RaziloBindDateAlterer,
-			JoinAlterer: RaziloBindJoinAlterer
+			JoinAlterer: RaziloBindJoinAlterer,
+			EqualAlterer: RaziloBindEqualAlterer,
+			IdenticalAlterer: RaziloBindIdenticalAlterer
 		};
 
 		// Inject default binders
