@@ -62,7 +62,7 @@ Propert browsers are fully supported in their evergreen state, IE is supported d
 
 We will aim to be dependancy free, of course this package depends on other parts of the razilobind collection, and there is also the compilation development dependancies like grunt/gulp, babel etc... Whilst we try to be dependancy free in the actual razilobind library, we do bundle some code, such as dateFormat https://github.com/felixge/node-dateformat by Steven Levithan <stevenlevithan.com>. We bundle this because it is not native ES6 and because it is small enough to put into the alterer class directly.
 
-The only real dependancy we have at present, and it is not so much a dependancy really, is the proxy polyfill. This is what we use to polfill Proxy() in browsers that do not yet support it. So Chrome and FF will not need it and will ignore it, IE will use it down to IE 9 so expect a little delay here. Proxy() is used to observe changes on the model, so you will need to add this to your HTML head section if you want support down to IE9, this will be pulled in automagically with npm install, feel free to use it anywhere in your project without worry.
+The only real dependancy we have at present, and it is not so much a dependancy really, is the proxy-oo-polyfill. This is what we use to polfill Proxy and offer observing with restriction in browsers that do not yet support it. So Chrome and FF will not need it and will ignore it, IE will use it down to IE 9 so expect a little delay here. Proxy.oo is used to observe changes on the model in the event Proxy native is not present, so you will need to add this to your HTML head section if you want support down to IE9, this will be pulled in automagically with npm install, feel free to use it anywhere in your project without worry.
 
 
 ## Is There an ES5 Distributable?
@@ -363,7 +363,7 @@ Create a main HTML file to hit from your browser...
 		<title>Test</title>
 
 		<!-- Polyfill native API's if missing MINIFIED VERSION HAS ISSUES @0.1.3, 'Object not extensible' -->
-        <script type="text/javascript" src="node_modules/proxy-polyfill/proxy.js"></script>
+        <script type="text/javascript" src="node_modules/proxy-oo-polyfill/proxy-oo-polyfill.min.js"></script>
 	</head>
 	<body>
 		<div id="test">
