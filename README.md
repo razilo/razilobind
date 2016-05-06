@@ -54,7 +54,8 @@ It's the future of JS, is vanilla JS (which I like), is clean, is more modular, 
 ## Whats Supported?
 
 
-Propert browsers are fully supported in their evergreen state, IE is supported down to IE9 through polyfills.
+Propert browsers are fully supported in their evergreen state, IE is supported down to IE9 through polyfills. Please ensure when compiling using babel, that you compile with the es2015-loose preset. This
+engine uses parent classes and constructors, as such IE support requires a compile that supports this, for IE9 up to EDGE you must use the es2015-loose preset in your package file.
 
 
 ## What are the Dependancies?
@@ -255,6 +256,8 @@ projectRoot/package.json
 
 Contains all aspects of your project and sets up babel preset (babel compiles the ES6 to 5), set private to true unless you want to publish to npm (stops accidental publishing!)
 
+Also issues with IE 9, 10, 11 with running parent constructors in compiled todayscript means you want to use the es2015-loose preset when compiling to ensure IE less than edge support.
+
 ```json
 {
 	"name": "project name",
@@ -272,13 +275,14 @@ Contains all aspects of your project and sets up babel preset (babel compiles th
 	"devDependencies": {
 		"babel-core": "^6.7.7",
 		"babel-preset-es2015": "^6.6.0",
+		"babel-preset-es2015-loose": "^7.0.0",
 		"babelify": "^7.2.0",
 		"grunt": "^1.0.1",
 		"grunt-browserify": "^5.0.0",
 		"grunt-contrib-watch": "^1.0.0"
 	},
 	"browserify": {
-		"transform": [["babelify", { "presets": ["es2015"] }]]
+		"transform": [["babelify", { "presets": ["es2015-loose"] }]]
 	}
 }
 ```
