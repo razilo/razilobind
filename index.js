@@ -29,7 +29,11 @@ import {
 	RaziloBindValueBinder,
 	RaziloBindCheckedBinder,
 	RaziloBindEventBinder,
-	RaziloBindInitBinder
+	RaziloBindInitBinder,
+	RaziloBindClickBinder,
+	RaziloBindHoverBinder,
+	RaziloBindChangeBinder,
+	RaziloBindInputBinder
 } from 'razilobind-binder'
 
 import {
@@ -80,7 +84,11 @@ export default class RaziloBind extends RaziloBindCore {
 			ValueBinder: RaziloBindValueBinder,
 			CheckedBinder: RaziloBindCheckedBinder,
 			EventBinder: RaziloBindEventBinder,
-			InitBinder: RaziloBindInitBinder
+			InitBinder: RaziloBindInitBinder,
+			ClickBinder: RaziloBindClickBinder,
+			HoverBinder: RaziloBindHoverBinder,
+			ChangeBinder: RaziloBindChangeBinder,
+			InputBinder: RaziloBindInputBinder
 		};
 
 		// Inject default resolvers
