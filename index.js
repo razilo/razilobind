@@ -23,17 +23,19 @@ import {
 	RaziloBindHideBinder,
 	RaziloBindStyleBinder,
 	RaziloBindClassBinder,
-	RaziloBindAttributeBinder,
+	RaziloBindAttributesBinder,
+	RaziloBindSrcBinder,
+	RaziloBindHrefBinder,
+	RaziloBindDisabledBinder,
+	RaziloBindRequiredBinder,
+	RaziloBindSelectedBinder,
 	RaziloBindIfBinder,
 	RaziloBindElseBinder,
 	RaziloBindValueBinder,
 	RaziloBindCheckedBinder,
 	RaziloBindEventBinder,
 	RaziloBindInitBinder,
-	RaziloBindClickBinder,
-	RaziloBindHoverBinder,
-	RaziloBindChangeBinder,
-	RaziloBindInputBinder
+	RaziloBindModelBinder
 } from 'razilobind-binder'
 
 import {
@@ -78,17 +80,19 @@ export default class RaziloBind extends RaziloBindCore {
 			HideBinder: RaziloBindHideBinder,
 			StyleBinder: RaziloBindStyleBinder,
 			ClassBinder: RaziloBindClassBinder,
-			AttributeBinder: RaziloBindAttributeBinder,
+			AttributesBinder: RaziloBindAttributesBinder,
+			SrcBinder: RaziloBindSrcBinder,
+			HrefBinder: RaziloBindHrefBinder,
+			DisabledBinder: RaziloBindDisabledBinder,
+			RequiredBinder: RaziloBindRequiredBinder,
+			SelectedBinder: RaziloBindSelectedBinder,
 			IfBinder: RaziloBindIfBinder,
 			ElseBinder: RaziloBindElseBinder,
 			ValueBinder: RaziloBindValueBinder,
 			CheckedBinder: RaziloBindCheckedBinder,
 			EventBinder: RaziloBindEventBinder,
 			InitBinder: RaziloBindInitBinder,
-			ClickBinder: RaziloBindClickBinder,
-			HoverBinder: RaziloBindHoverBinder,
-			ChangeBinder: RaziloBindChangeBinder,
-			InputBinder: RaziloBindInputBinder
+			ModelBinder: RaziloBindModelBinder
 		};
 
 		// Inject default resolvers
