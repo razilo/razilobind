@@ -34,6 +34,10 @@ import {
 	RaziloBindValueBinder,
 	RaziloBindCheckedBinder,
 	RaziloBindEventBinder,
+	RaziloBindClickBinder,
+	RaziloBindInputBinder,
+	RaziloBindHoverBinder,
+	RaziloBindChangeBinder,
 	RaziloBindInitBinder,
 	RaziloBindModelBinder
 } from 'razilobind-binder'
@@ -91,6 +95,10 @@ export default class RaziloBind extends RaziloBindCore {
 			ValueBinder: RaziloBindValueBinder,
 			CheckedBinder: RaziloBindCheckedBinder,
 			EventBinder: RaziloBindEventBinder,
+			ClickBinder: RaziloBindClickBinder,
+			InputBinder: RaziloBindInputBinder,
+			HoverBinder: RaziloBindHoverBinder,
+			ChangeBinder: RaziloBindChangeBinder,
 			InitBinder: RaziloBindInitBinder,
 			ModelBinder: RaziloBindModelBinder
 		};
