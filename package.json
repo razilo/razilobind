@@ -1,5 +1,5 @@
 {
-  "version": "1.1.4",
+  "version": "1.2.0",
   "name": "razilobind",
   "description": "ES6 JS/HTML binding library for creating dynamic web applications through HTML attribute binding. Pulls in all required parts and configures as RaziloBind",
   "homepage": "http://bind.razilo.net",
@@ -14,10 +14,10 @@
 	  }
   ],
   "dependencies": {
-    "razilobind-alterer": "^1.1.4",
-    "razilobind-binder": "^1.1.4",
-    "razilobind-core": "^1.1.4",
-    "razilobind-resolver": "^1.1.4"
+    "razilobind-alterer": "^1.2.0",
+    "razilobind-binder": "^1.2.0",
+    "razilobind-core": "^1.2.0",
+    "razilobind-resolver": "^1.2.0"
   },
   "devDependencies": {},
   "browserify": {

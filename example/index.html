@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base href="/">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>raziloBind</title>
+	</head>
+	<body>
+		<div id="test">
+		  <!-- Property of the model (two way bind, updatable) -->
+		  <span raz-bind-text="foo"></span>
+
+		  <!-- String Literal (one time bind, not updateable) -->
+		  <span raz-bind-text="'world'" raz-alter-text="{'prefix': 'hello '}"></span>
+
+		  <!-- Some more, without prefix -->
+		  <span bind-text="foo" alter-text="{'suffix': 'manchew'}" bind-show="true"></span>
+		</div>
+
+		<script type="text/javascript" src="build/example.js"></script>
+	</body>
+</html>
